@@ -70,6 +70,11 @@ public abstract class FailbackRegistry extends AbstractRegistry {
     }
 
     @Override
+    public void destroy() {
+        retryExecutor.shutdown();
+    }
+
+    @Override
     public void register(URL url) {
         failedRegistered.remove(url);
         failedUnregistered.remove(url);

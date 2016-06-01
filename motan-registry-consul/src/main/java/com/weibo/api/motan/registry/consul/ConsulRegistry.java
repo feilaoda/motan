@@ -53,7 +53,13 @@ public class ConsulRegistry extends FailbackRegistry {
                 TimeUnit.MILLISECONDS, workQueue);
         LoggerUtil.info("ConsulRegistry init finish.");
 	}
-	
+
+
+	@Override
+	public void destroy() {
+		super.destroy();
+		notifyExecutor.shutdown();
+	}
 	
 
 	@Override

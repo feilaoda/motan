@@ -34,6 +34,10 @@ public class MockRegistryFactory extends AbstractRegistryFactory {
     protected Registry createRegistry(URL url) {
         return new Registry() {
 
+            public void destroy() {
+
+            }
+
             @Override
             public void register(URL url) {}
 

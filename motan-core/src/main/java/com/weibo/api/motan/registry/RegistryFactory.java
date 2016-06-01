@@ -31,4 +31,6 @@ import com.weibo.api.motan.rpc.URL;
 public interface RegistryFactory {
 
     Registry getRegistry(URL url);
+
+    void destroy();
 }

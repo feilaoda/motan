@@ -58,6 +58,10 @@ public class StatsUtil {
         }, MotanConstants.STATISTIC_PEROID, MotanConstants.STATISTIC_PEROID, TimeUnit.SECONDS);
     }
 
+    public static void destroy() {
+        executorService.shutdown();
+    }
+
     public static void registryStatisticCallback(StatisticCallback callback) {
         if (callback == null) {
             LoggerUtil.warn("StatsUtil registryStatisticCallback is null");

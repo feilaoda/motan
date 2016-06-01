@@ -69,6 +69,11 @@ public abstract class AbstractRegistry implements Registry {
     }
 
     @Override
+    public void destroy() {
+
+    }
+
+    @Override
     public void register(URL url) {
         if (url == null) {
             LoggerUtil.warn("[{}] register with malformed param, url is null", registryClassName);

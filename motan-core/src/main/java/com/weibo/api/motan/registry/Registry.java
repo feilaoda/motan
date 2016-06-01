@@ -31,4 +31,6 @@ import com.weibo.api.motan.rpc.URL;
 public interface Registry extends RegistryService, DiscoveryService {
 
     URL getUrl();
+
+    void destroy();
 }

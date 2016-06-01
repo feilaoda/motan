@@ -316,6 +316,8 @@ public class NettyClient extends AbstractPoolClient implements StatisticCallback
 			// 解除统计回调的注册
 			StatsUtil.unRegistryStatisticCallback(this);
 			LoggerUtil.info("NettyClient close Success: url={}", url.getUri());
+
+			scheduledExecutor.shutdown();
 		} catch (Exception e) {
 			LoggerUtil.error("NettyClient close Error: url=" + url.getUri(), e);
 		}

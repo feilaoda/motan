@@ -112,6 +112,7 @@ public class ClusterSupport<T> implements NotifyListener {
                 if (!MotanConstants.NODE_TYPE_REFERER.equals(url.getParameter(URLParamType.nodeType.getName()))) {
                     registry.unregister(url);
                 }
+                registry.destroy();
             } catch (Exception e) {
                 LoggerUtil.warn(String.format("Unregister or unsubscribe false for url (%s), registry= %s", url, ru.getIdentity()), e);
             }

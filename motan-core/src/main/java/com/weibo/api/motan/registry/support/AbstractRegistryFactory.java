@@ -16,6 +16,7 @@
 
 package com.weibo.api.motan.registry.support;
 
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -67,4 +68,10 @@ public abstract class AbstractRegistryFactory implements RegistryFactory {
     }
 
     protected abstract Registry createRegistry(URL url);
+
+    public void destroy() {
+        for(Map.Entry<String, Registry> entry: registries.entrySet()) {
+            entry.getValue().destroy();
+        }
+    }
 }

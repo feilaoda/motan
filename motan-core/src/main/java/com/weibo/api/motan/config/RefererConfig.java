@@ -19,6 +19,7 @@ package com.weibo.api.motan.config;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
+import com.weibo.api.motan.util.MotanClusterUtil;
 import org.apache.commons.lang3.StringUtils;
 
 import com.weibo.api.motan.cluster.Cluster;
@@ -129,7 +130,6 @@ public class RefererConfig<T> extends AbstractRefererConfig {
 
             clusterSupports.add(clusterSupport);
             clusters.add(clusterSupport.getCluster());
-
             proxy = (proxy == null) ? refUrl.getParameter(URLParamType.proxy.getName(), URLParamType.proxy.getValue()) : proxy;
 
         }

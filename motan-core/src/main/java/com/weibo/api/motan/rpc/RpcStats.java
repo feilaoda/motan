@@ -129,6 +129,10 @@ public class RpcStats {
 
     }
 
+    public static void destroy() {
+        scheduledExecutor.shutdown();
+    }
+
     public static class StatInfo {
 
         private AtomicInteger activeCount = new AtomicInteger();

@@ -139,6 +139,7 @@ public class ExtensionLoader<T> {
         return obj;
     }
 
+
     public void addExtensionClass(Class<T> clz) {
         if (clz == null) {
             return;
